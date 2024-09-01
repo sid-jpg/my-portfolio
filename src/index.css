@@ -41,11 +41,53 @@ body {
   color: var(--text-color);
 }
 
-/* Header styles */
 header {
   background-color: var(--navbar-bg);
   color: var(--navbar-text);
-  padding: 1rem 2rem; /* Adjust padding for responsiveness */
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* Mobile Menu Styles */
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  z-index: 50;
+}
+
+/* Show menu when open */
+.menu-dropdown.show {
+  display: block;
+}
+
+/* Mobile Menu Links */
+.menu-dropdown a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.menu-dropdown a:hover {
+  background-color: var(--button-bg);
+}
+
+/* Overlay for Mobile Menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
 }
 
 /* Heading styles */
@@ -90,8 +132,13 @@ a {
 /* Font face for NothingFont */
 @font-face {
   font-family: 'NothingFont';
+<<<<<<< HEAD
+ src: url('./Fonts/ProtoMono-Regular.ttf') format('truetype');
+ font-weight: normal;
+=======
   src: url('./Fonts/ProtoMono-Regular.ttf') format('truetype');
   font-weight: normal;
+>>>>>>> 2ed09bdb03e2e87faebee6d728d3a9f87d26044a
   font-style: normal;
 }
 
@@ -146,7 +193,7 @@ a {
 }
 
 .scroll-down:hover {
-  background-color: var(--scroll-down-bg); /* Adjust hover effect */
+  background-color: var(--button-bg);
 }
 
 /* Hire me button styles */
@@ -199,5 +246,36 @@ a {
   .hire-me {
     font-size: 0.875rem;
     padding: 8px 16px;
+  }
+
+  /* Header for mobile view */
+  header {
+    padding: 1rem;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-dropdown {
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: var(--background-color);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .menu-overlay {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-overlay {
+    display: none;
   }
 }
