@@ -132,13 +132,8 @@ a {
 /* Font face for NothingFont */
 @font-face {
   font-family: 'NothingFont';
-<<<<<<< HEAD
  src: url('./Fonts/ProtoMono-Regular.ttf') format('truetype');
  font-weight: normal;
-=======
-  src: url('./Fonts/ProtoMono-Regular.ttf') format('truetype');
-  font-weight: normal;
->>>>>>> 2ed09bdb03e2e87faebee6d728d3a9f87d26044a
   font-style: normal;
 }
 
