@@ -90,7 +90,7 @@ a {
 /* Font face for NothingFont */
 @font-face {
   font-family: 'NothingFont';
-  src: url('C:\Users\a2z\Desktop\Myreact\my-portfolio\src\Fonts\ProtoMono-Regular.ttf') format('truetype');
+  src: url('src/Fonts/ProtoMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
