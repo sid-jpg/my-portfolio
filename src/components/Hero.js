@@ -19,13 +19,13 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row justify-start space-y-3 md:space-y-0 md:space-x-4 mb-6">
           <button
             onClick={() => window.location.href = '#contact'}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 md:py-2 md:px-6 lg:py-3 lg:px-8 rounded"
           >
             Contact me!
           </button>
           <button
             onClick={() => window.open('https://raw.githubusercontent.com/sid-jpg/my-portfolio/main/public/resume.pdf')}
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 md:py-2 md:px-6 lg:py-3 lg:px-8 rounded"
           >
             Hire me
           </button>
