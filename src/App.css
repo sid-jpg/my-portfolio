@@ -1,18 +1,22 @@
+/* General styles for the app */
 .App {
   text-align: center;
 }
 
+/* Styling for the app logo */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Animation for the app logo */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header styling */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,17 +26,49 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0 1rem; /* Added padding for better responsiveness */
+  box-sizing: border-box; /* Ensure padding is included in total width/height */
 }
 
+/* Link styling */
 .App-link {
   color: #61dafb;
 }
 
+/* Keyframes for the spinning animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* Responsive design for tablets and smaller laptops */
+@media (max-width: 768px) {
+  .App-logo {
+    height: 30vmin; /* Adjust logo size for smaller screens */
+  }
+
+  .App-header {
+    font-size: calc(8px + 2vmin); /* Slightly smaller font size */
+    padding: 0 0.5rem; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+  .App-logo {
+    height: 25vmin; /* Further adjust logo size for mobile screens */
+  }
+
+  .App-header {
+    font-size: calc(6px + 2vmin); /* Further reduce font size */
+    padding: 0 0.5rem; /* Ensure padding is consistent */
+  }
+
+  .App-link {
+    font-size: 1.2rem; /* Slightly larger link font size for better readability on mobile */
   }
 }

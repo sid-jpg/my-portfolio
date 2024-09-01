@@ -1,13 +1,203 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Import Tailwind's base, components, and utilities */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light mode (default) */
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --navbar-bg: #f8f9fa; /* Light mode navbar background */
+  --navbar-text: #000; /* Light mode navbar text color */
+  --button-bg: #007BFF;
+  --button-hover-bg: #0056b3;
+  --scroll-down-bg: #fff;
+  --scroll-down-text-color: #000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Dark mode */
+.dark {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --navbar-bg: #1f1f1f; /* Dark mode navbar background */
+  --navbar-text: #e0e0e0; /* Dark mode navbar text color */
+  --button-bg: #1e88e5;
+  --button-hover-bg: #1565c0;
+  --scroll-down-bg: #333;
+  --scroll-down-text-color: #fff;
+}
+
+/* Global styles */
+body {
+  font-family: 'Proto Mono', monospace;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Header styles */
+header {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  padding: 1rem 2rem; /* Adjust padding for responsiveness */
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'NothingFont', sans-serif;
+  margin: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/* Paragraph styles */
+p {
+  font-size: 1.125rem;
+}
+
+/* Anchor styles */
+a {
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* Section styles */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Font face for NothingFont */
+@font-face {
+  font-family: 'NothingFont';
+  src: url('C:\Users\a2z\Desktop\Myreact\my-portfolio\src\Fonts\ProtoMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Hero section styles */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background-color: var(--background-color);
+  padding: 2rem; /* Add padding for responsiveness */
+}
+
+.hero-content {
+  text-align: center;
+  color: var(--text-color);
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Button container styles */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Scroll down button styles */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--scroll-down-bg);
+  color: var(--scroll-down-text-color);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.scroll-down:hover {
+  background-color: var(--scroll-down-bg); /* Adjust hover effect */
+}
+
+/* Hire me button styles */
+.hire-me {
+  background-color: var(--button-bg);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.hire-me:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .scroll-down {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .hire-me {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+  }
 }
