@@ -1,0 +1,59 @@
+/* Skill Bar Animation */
+@keyframes fill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Skill Bar */
+.skill-bar {
+  position: relative;
+  overflow: hidden;
+  background-color: #e0e0e0; /* Default background for the bar */
+  border-radius: 0.375rem; /* Rounded corners for the bar */
+  height: 1.5rem; /* Adjust height of the bar */
+  transition: background-color 0.3s ease;
+}
+
+/* Skill Bar Inner */
+.skill-bar-inner {
+  height: 100%;
+  background-color: currentColor; /* Color of the progress */
+  border-radius: inherit;
+  width: 0; /* Start width for animation */
+  transition: width 0.3s ease; /* Smooth width transition */
+}
+
+/* Animate progress on hover */
+.skill-bar:hover .skill-bar-inner {
+  animation: fill 1s ease-out forwards; /* Fill animation */
+}
+
+/* Hover effect for skill logos */
+.skill-logo {
+  transition: transform 0.3s ease;
+}
+
+.skill-logo:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skill-logo {
+    width: 14px; /* Adjust logo size for smaller screens */
+    height: 14px;
+  }
+
+  .skill-bar {
+    flex-direction: column; /* Stack the skill bar content vertically */
+    align-items: flex-start;
+  }
+
+  .skill-bar-inner {
+    height: 5px; /* Adjust bar height */
+  }
+}
