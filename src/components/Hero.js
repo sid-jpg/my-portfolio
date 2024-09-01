@@ -5,14 +5,13 @@ const Hero = () => {
   return (
     <section className="hero bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-screen flex items-center">
       <div className="container mx-auto px-4 text-left">
-        <h1 className="mb-6 md:mb-8">
-          <span className="block text-6xl md:text-8xl lg:text-9xl font-bold">Hi,</span>
-          <span className="block text-4xl md:text-6xl lg:text-7xl font-bold">
+        <h1 className="mb-3 md:mb-8">
+          <span className="block text-4xl md:text-8xl lg:text-9xl font-bold">Hi,</span>
+          <span className="block text-3xl md:text-6xl lg:text-7xl font-bold">
             I'm <span className="text-blue-500 dark:text-techno-blue">S</span>iddalingaraju,
           </span>
-          <span className="block text-3xl md:text-5xl lg:text-6xl font-bold">computer science &</span>
-          <span className="block text-3xl md:text-5xl lg:text-6xl font-bold text-techno-blue dark:text-techno-blue">engineering</span>
-          <span className="block text-3xl md:text-5xl lg:text-6xl font-bold">student</span>
+          <span className="block text-2xl md:text-5xl lg:text-6xl font-bold">computer science &</span>
+          <span className="block text-2xl md:text-5xl lg:text-6xl font-bold text-techno-blue dark:text-techno-blue">engineering student</span>
         </h1>
         <p className="text-lg md:text-xl mb-6 md:mb-8">
           Cybersecurity Enthusiast / Back-end Developer
