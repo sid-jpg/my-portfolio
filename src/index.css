@@ -90,7 +90,7 @@ a {
 /* Font face for NothingFont */
 @font-face {
   font-family: 'NothingFont';
-  src: url('src/Fonts/ProtoMono-Regular.ttf') format('truetype');
+  src: url('./Fonts/ProtoMono-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
