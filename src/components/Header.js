@@ -9,7 +9,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-md py-4 md:py-6">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-md py-2 md:py-4"> {/* Reduced py-4 to py-2 */}
       <nav className="container mx-auto px-6 md:px-8">
         <div className="flex items-center justify-between md:justify-start">
           {/* Hamburger Menu for Mobile */}
@@ -23,7 +23,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
             </button>
           </div>
           {/* Centered Logo */}
-          <a href="#home" className="text-2xl font-bold hover:text-blue-500 dark:hover:text-blue-300 flex-1 text-center md:text-left">
+          <a href="#home" className="text-xl font-bold hover:text-blue-500 dark:hover:text-blue-300 flex-1 text-center md:text-left"> {/* Reduced text-2xl to text-xl */}
             <p className="m-0">SD</p>
           </a>
           {/* Theme Toggle for Mobile */}
