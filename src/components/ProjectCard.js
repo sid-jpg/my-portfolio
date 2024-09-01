@@ -1,16 +1,17 @@
 import React from 'react';
+import './ProjectCard.css'; // Import the CSS file with animations
 
 const ProjectCard = ({ title, description, tags, githubLink, demoLink }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-      <div className="p-4 md:p-6">
-        <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-800 dark:text-white">{title}</h3>
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4">{description}</p>
+    <div className="project-card gradient-background bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl card-container">
+      <div className="p-6">
+        <h3 className="text-2xl font-semibold mb-2 neon-text">{title}</h3>
+        <p className="text-base text-gray-700 dark:text-gray-400 mb-4">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs md:text-sm"
+              className="tag px-3 py-1 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium pulse"
             >
               {tag}
             </span>
@@ -22,7 +23,7 @@ const ProjectCard = ({ title, description, tags, githubLink, demoLink }) => {
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 rounded-md hover:bg-gray-700 dark:hover:bg-gray-300 transition-colors duration-300 text-center text-sm md:text-base"
+              className="button-github px-4 py-2 bg-gray-800 dark:bg-gray-300 text-white dark:text-gray-900 rounded-md hover:bg-gray-700 dark:hover:bg-gray-400 transition-colors duration-300 text-center text-sm font-semibold neon-button"
             >
               View on GitHub
             </a>
@@ -32,7 +33,7 @@ const ProjectCard = ({ title, description, tags, githubLink, demoLink }) => {
               href={demoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300 text-center text-sm md:text-base"
+              className="button-demo px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300 text-center text-sm font-semibold neon-button"
             >
               Live Demo
             </a>
