@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './SkillsDashboard.css'; // Import the CSS file with animations
 
 const skills = [
   { name: 'C++', level: 90, logo: '/assets/cpp.png', color: '#00599C' },
@@ -14,37 +15,58 @@ const skills = [
 ];
 
 const SkillLogo = ({ logo }) => (
-  <div className="w-16 h-16 flex items-center justify-center rounded-md bg-gray-200 dark:bg-gray-700">
+  <div className="w-16 h-16 flex items-center justify-center rounded-md bg-gray-200 dark:bg-gray-700 transition-transform duration-300 hover:scale-105">
     <img src={logo} alt="Skill logo" className="w-12 h-12 object-contain" />
   </div>
 );
 
-const SkillBar = ({ name, level, logo, color }) => (
-  <div className="flex items-center space-x-4 mb-6">
-    <SkillLogo logo={logo} />
-    <div className="flex-grow">
-      <div className="flex justify-between mb-2">
-        <span className="text-lg font-semibold">{name}</span>
-        <span className="text-lg font-semibold">{level}%</span>
-      </div>
-      <div className="h-6 bg-gray-300 dark:bg-gray-600 rounded-full">
-        <div
-          className="h-full rounded-full"
-          style={{ width: `${level}%`, backgroundColor: color }}
-        />
+const SkillBar = ({ name, level, logo, color }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const skillBarElement = document.getElementById(name);
+      if (skillBarElement) {
+        const { top } = skillBarElement.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (top < windowHeight * 0.75) {
+          setIsVisible(true);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [name]);
+
+  return (
+    <div id={name} className="flex items-center space-x-4 mb-6">
+      <SkillLogo logo={logo} />
+      <div className="flex-grow">
+        <div className="flex justify-between mb-2">
+          <span className="text-lg font-semibold">{name}</span>
+          <span className="text-lg font-semibold">{level}%</span>
+        </div>
+        <div className="h-6 bg-gray-300 dark:bg-gray-600 rounded-full">
+          <div
+            className={`h-full rounded-full ${isVisible ? 'animate-fill' : ''}`}
+            style={{ width: `${level}%`, backgroundColor: color }}
+          />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const SkillsDashboard = () => {
-  // Split the skills into two columns
   const midIndex = Math.ceil(skills.length / 2);
   const skillsColumn1 = skills.slice(0, midIndex);
   const skillsColumn2 = skills.slice(midIndex);
 
   return (
-    <section id="skills" className="bg-gray-100 dark:bg-gray-900 py-12">
+    <section id="skills" className="bg-gray-100 dark:bg-gray-900 py-12 fade-in">
       <div className="container mx-auto px-4">
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-blue-600 dark:text-blue-400 text-center">
           My Skills
